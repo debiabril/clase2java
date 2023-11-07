@@ -12,15 +12,20 @@ public class Main {
         listaStrings.add("Mi");
         listaStrings.add("gatito");
         listaStrings.add("lindo");
-        string interface1 = (interface2) -> {
+
+        funtionalString interface1 = (interface2) -> {
             interface2.replaceAll(String::toUpperCase);
             System.out.println(interface2);
             return  interface2;
         };
-        interface1.stringes(listaStrings);
+        System.out.println(transformador(listaStrings, interface1));
+    }
+
+    static ArrayList<String> transformador (ArrayList<String> lista, funtionalString interface1){
+        return interface1.stringes(lista);
     }
     @FunctionalInterface
-    public interface string{
-        List<String> stringes(ArrayList<String> stringcitos);
+    public interface funtionalString{
+        ArrayList<String> stringes(ArrayList<String> stringcitos);
     }
 }
